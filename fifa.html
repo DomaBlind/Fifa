@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA</title>
+    <script src="fifa.js"></script>
+
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Csapat Neve</th>
+                <th>Helyezés</th>
+                <th>Helyezés Változása</th>
+                <th>Pontszám</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Itt jelennek meg a csapatok -->
+        </tbody>
+    </table>
+
+    <script>
+        const tableBody = document.getElementById('table-body');
+
+        csapatAdat.forEach(adat => {
+            const [nev, helyezes, valtozas, pont] = adat.split(';');
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${nev}</td><td>${helyezes}</td><td>${valtozas}</td><td>${pont}</td>`;
+            tableBody.appendChild(row);
+        });
+    </script>
+
+</body>
+
+</html>
